@@ -6,6 +6,8 @@ routes.post('/sessions', (req, res, next) => {
   SessionController.store(req, res, next);
 });
 
+routes.get('/hello', (req, res) => res.status(200).send({ message: 'Hello world' }));
+
 routes.use(authMiddleware);
 routes.get('/dashboard', (req, res) => res.status(200).send());
 
